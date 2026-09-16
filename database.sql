@@ -68,6 +68,9 @@ CREATE TABLE IF NOT EXISTS usuario (
     atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+
+INSERT INTO usuario () VALUES ();
+
 -- População inicial (Opcional)
 INSERT INTO produto (nome, descricao, preco, categoria, disponivel) VALUES 
 ('Espaguete à Bolonhesa', 'Massa com molho de tomate e carne moída', 35.50, 'Massa', true),

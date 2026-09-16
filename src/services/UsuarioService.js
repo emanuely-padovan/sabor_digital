@@ -31,13 +31,14 @@ class UsuarioService {
 
         return { sucesso: true, mensagem: "Usuário registrado com sucesso!", id: novoId };
     }
+    
     async login(email, senha) {
         if(!email || !senha) {
             throw { status: 400, mensagem: "Email e senha são campos obrigatórios!" };
         }
 
         const usuario = await UsuarioRepository.findByEmail(email);
-        if(usuario) {
+        if(!usuario) {
             throw { status: 401, mensagem: "Credenciais inválidas!" };
         }
 
@@ -48,7 +49,7 @@ class UsuarioService {
 
         // Gerar JWT
         const token = jwt.sign(
-            { id: usuario.id, email: usuario.eamil, papel: usuario.papel },
+            { id: usuario.id, email: usuario.email, papel: usuario.papel },
             JWT_SECRET,
             {expiresIn: '2h'}
         );
