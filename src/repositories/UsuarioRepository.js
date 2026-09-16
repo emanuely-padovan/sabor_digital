@@ -12,4 +12,4 @@ class UsuarioRepository {
     };
 }
 
-module.exports = new ProdutoRepository();
+module.exports = new UsuarioRepository();
