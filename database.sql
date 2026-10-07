@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS usuario (
 );
 
 
-INSERT INTO usuario () VALUES ();
+INSERT INTO usuario (nome, email, senha, papel) VALUES ("", "", "", "");
 
 -- População inicial (Opcional)
 INSERT INTO produto (nome, descricao, preco, categoria, disponivel) VALUES 
